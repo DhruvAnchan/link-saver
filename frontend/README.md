@@ -33,7 +33,7 @@ Node.js installed on your machine.
 
 A MongoDB database connection string. You can get one for free from MongoDB Atlas.
 
-1. Backend Setup
+1. **Backend Setup**
 First, navigate to the backend directory and set up the server.
 
 # 1. Go into the backend folder
@@ -43,11 +43,11 @@ cd backend
 npm install
 
 # 3. Create a .env file in the 'backend' folder and add your
-#    MongoDB Atlas connection string.
-#    It should look like this:
-#    ATLAS_URI=mongodb+srv://<username>:<password>@cluster...
+####    MongoDB Atlas connection string.
+####    It should look like this:
+####    ATLAS_URI=mongodb+srv://<username>:<password>@cluster...
 
-2. Frontend Setup
+2. **Frontend Setup**
 Next, open a new terminal window and navigate to the frontend directory.
 
 # 1. Go into the frontend folder
