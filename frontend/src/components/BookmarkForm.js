@@ -20,7 +20,7 @@ function BookmarkForm() {
     };
 
     // 3. Send a POST request to the backend
-    axios.post('http://localhost:5001/bookmarks', newBookmark)
+    axios.post('http://localhost:5001/bookmarks/add', newBookmark)
       .then(res => {
         console.log(res.data);
         setMessage('Bookmark added successfully!');
