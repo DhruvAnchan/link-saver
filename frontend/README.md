@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+🔖 LinkSaver - A Personal Bookmark Manager
+LinkSaver is a simple, full-stack web application built using the MERN stack. It allows users to save, view, and manage their personal website bookmarks in a clean and easy-to-use interface. This project was created as a hands-on learning exercise to understand the fundamentals of full-stack development.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+✨ Features
+Add Bookmarks: A simple form to submit a new bookmark with a title and URL.
 
-## Available Scripts
+View All Bookmarks: A clean list displaying all saved bookmarks.
 
-In the project directory, you can run:
+Full CRUD Functionality (Planned): The API is built to support creating, reading, updating, and deleting bookmarks.
 
-### `npm start`
+🛠️ Tech Stack
+This project is built with the MERN stack:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+MongoDB: A NoSQL database used to store the bookmark data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Express.js: A backend web framework for building the RESTful API.
 
-### `npm test`
+React.js: A frontend JavaScript library for building the user interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Node.js: The JavaScript runtime environment for the backend server.
 
-### `npm run build`
+Key Libraries:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend: mongoose (for MongoDB object modeling), cors (for enabling cross-origin requests), dotenv (for environment variables).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Frontend: axios (for making API requests to the backend).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🚀 Installation and Setup
+To get this project running locally, you'll need to set up both the backend and the frontend.
 
-### `npm run eject`
+Prerequisites
+Node.js installed on your machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A MongoDB database connection string. You can get one for free from MongoDB Atlas.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Backend Setup
+First, navigate to the backend directory and set up the server.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# 1. Go into the backend folder
+cd backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# 2. Install all required dependencies
+npm install
 
-## Learn More
+# 3. Create a .env file in the 'backend' folder and add your
+#    MongoDB Atlas connection string.
+#    It should look like this:
+#    ATLAS_URI=mongodb+srv://<username>:<password>@cluster...
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Frontend Setup
+Next, open a new terminal window and navigate to the frontend directory.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 1. Go into the frontend folder
+cd frontend
 
-### Code Splitting
+# 2. Install all required dependencies
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Usage
+You need to have both the backend and frontend servers running simultaneously in separate terminal windows.
 
-### Analyzing the Bundle Size
+1. Start the Backend Server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+In the backend terminal, run:
 
-### Making a Progressive Web App
+node server.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The server should start on http://localhost:5001.
 
-### Advanced Configuration
+2. Start the Frontend Server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In the frontend terminal, run:
 
-### Deployment
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Your web browser should automatically open to http://localhost:3000, where you can use the application.
