@@ -10,7 +10,7 @@ function BookmarkList() {
   // 2. useEffect runs once when the component loads
   useEffect(() => {
     // 3. Use axios to make a GET request to our backend API
-    axios.get('http://10.146.3.4/bookmarks/add')
+    axios.get('http://localhost:5001/bookmarks')
       .then(response => {
         // 4. If the request is successful, update the state
         console.log('Data received:', response.data);

@@ -11,18 +11,24 @@ router.route('/').get((req, res) => {
 
 // POST (add) a new bookmark
 router.route('/add').post((req, res) => {
-  // --- ADD THIS LOG ---
-  // This will tell us if the request successfully reaches this specific route handler.
-  console.log('✅ Request has reached the /bookmarks/add route handler!');
+  // --- THIS IS THE CRUCIAL DEBUGGING STEP ---
+  // Let's log the request body to see what the server is receiving.
+  console.log('--- Request Body Received ---');
+  console.log(req.body);
+  console.log('---------------------------');
   
-  // Use a default empty object to prevent a crash if req.body is undefined
-  const { title, url, description } = req.body || {}; 
-  
+  const { title, url, description } = req.body;
   const newBookmark = new Bookmark({ title, url, description });
 
   newBookmark.save()
     .then(() => res.json('Bookmark added!'))
-    .catch(err => res.status(400).json({ error: err }));
+    .catch(err => {
+      // Log the specific save error
+      console.error('--- Mongoose Save Error ---');
+      console.error(err);
+      console.error('---------------------------');
+      res.status(400).json({ error: err })
+    });
 });
 
 // DELETE a bookmark
