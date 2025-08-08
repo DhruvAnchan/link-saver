@@ -1,20 +1,26 @@
 // backend/server.js
-
-// 1. Import the Express library
 const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-// 2. Create an instance of an Express application
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
-// 3. Define a "route"
-// This tells the server what to do if someone visits the main URL ('/')
-app.get('/', (req, res) => {
-  res.send('Hello from your Express server!');
-});
+const bookmarksRouter = require('./routes/bookmarks');
+app.use('/bookmarks', bookmarksRouter);
 
-// 4. Start the server
-// This makes the server listen for requests on the specified port
+app.use(cors());
+app.use(express.json()); // To parse JSON requests
+
+// Connect to MongoDB
+const uri = process.env.ATLAS_URI; // Get this from MongoDB Atlas
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const connection = mongoose.connection;
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully");
+})
+
 app.listen(port, () => {
-  console.log(`🚀 Server is running on http://localhost:${port}`);
+    console.log(`Server is running on port: ${port}`);
 });
